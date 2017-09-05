@@ -74,6 +74,7 @@ window.$j = $j;
 const queue = [];
 
 document.addEventListener("DOMContentLoaded", () => {
+  console.log('loaded!');
   queue.forEach((func) => {
     func();
   });

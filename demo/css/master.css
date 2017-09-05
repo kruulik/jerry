@@ -1,0 +1,49 @@
+
+
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 10%;
+  color: dimgray;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 3em;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+form {
+  width: 100%;
+}
+
+fieldset {
+  position: relative;
+  padding: 0;
+  border: none;
+}
+input[type="text"] {
+  font-size: inherit;
+  font-family: inherit;
+  width: 100%;
+  text-align: center;
+  border: none;
+  border-bottom: 2px solid dimgray;
+  font-family: inherit;
+  color: inherit;
+  opacity: .8;
+}
+
+input[type='text']:focus {
+  outline: none;
+  color: inherit;
+  font-family: inherit;
+  opacity: 1;
+}
+
+.action {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  cursor: pointer;
+}
