@@ -33,9 +33,6 @@
 /******/ 	// expose the module cache
 /******/ 	__webpack_require__.c = installedModules;
 /******/
-/******/ 	// identity function for calling harmony imports with the correct context
-/******/ 	__webpack_require__.i = function(value) { return value; };
-/******/
 /******/ 	// define getter function for harmony exports
 /******/ 	__webpack_require__.d = function(exports, name, getter) {
 /******/ 		if(!__webpack_require__.o(exports, name)) {
@@ -72,13 +69,17 @@
 
 const DOMNodeCollection = __webpack_require__(1);
 
+window.$j = $j;
+
 const queue = [];
+
 document.addEventListener("DOMContentLoaded", () => {
-  queue.forEach( (func) => {
+  queue.forEach((func) => {
     func();
   });
 });
-function $l(selector){
+
+function $j(selector) {
   let nodeList;
   if (selector instanceof Function) {
     if (document.readyState === 'complete') {
@@ -94,10 +95,32 @@ function $l(selector){
   }
 }
 
-window.$l = $l;
 
-$l.extend = function(...objects){
+$j.extend = function(...objects) {
   return Object.assign(...objects);
+};
+
+
+$j.ajax = options => {
+  const request = new XMLHttpRequest();
+  const defaults = {
+    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+    method: "GET",
+    url: "",
+    success: () => {},
+    error: () => {},
+    data: {},
+  };
+  options = $j.extend(defaults, options);
+  options.method = options.method.toUpperCase();
+  const xhr = new XMLHttpRequest();
+  xhr.open(options.method, options.url);
+  xhr.onload = function() {
+    console.log(xhr.status);
+    console.log(xhr.responseType);
+    console.log(xhr.response);
+  };
+  xhr.send(JSON.stringify(options.data));
 };
 
 
@@ -167,7 +190,7 @@ class DOMNodeCollection {
         el.classList.remove(...cNames);
       }
     });
-  } //not fully working but moving on.
+  }
 
   children() {
     let arr = [];
@@ -197,7 +220,6 @@ class DOMNodeCollection {
     this.elements.forEach((el) => {
       el.remove();
     });
-    // remove from DOMNodeCollection too?
   }
 
   on(action, callback){
@@ -226,3 +248,4 @@ module.exports = DOMNodeCollection;
 
 /***/ })
 /******/ ]);
+//# sourceMappingURL=jerry.js.map
