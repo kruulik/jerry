@@ -1,4 +1,9 @@
 $j( () => {
+   const search = $j(".search");
+   const weather = $j(".weather");
+   const input = ("<input/>");
 
-   console.log('weatherJS');
+   $j(search).append("<p>blah</>");
+
+   console.log(search);
  });
