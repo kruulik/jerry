@@ -146,6 +146,10 @@ class DOMNodeCollection {
     }
   }
 
+  val(){
+    return this.elements[0].value;
+  }
+
   empty() {
     this.elements.forEach((el) => {
       el.html('');

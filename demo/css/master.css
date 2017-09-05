@@ -41,9 +41,9 @@ input[type='text']:focus {
   opacity: 1;
 }
 
-.action {
+.submit-button {
   position: absolute;
-  top: 50%;
+  top: calc(100% - 65px);
   right: 0;
   cursor: pointer;
 }
