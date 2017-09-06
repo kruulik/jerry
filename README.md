@@ -9,7 +9,7 @@ jerry is a lightweight JavaScript DOM interaction Library, inspired by JQuery.
 - Handle DOM events
 - Make AJAX requests
 
-## Getting started
+## Use
 
 In order to use jerry, download this library into your project and add `jerry.js` in a script tag on the head of your root HTML page.
 
@@ -49,18 +49,38 @@ DOM elements are selected based on the type of input passed to $j:
 
 Select all HTML elements of a given type on a page by passing a string as an argument.
 
-### By Class Name
+### Select by Class Name
 
 Select all elements belonging to a particular class by prefixing each string item with '.'.
 
-### By ID
+### Select by ID
 
 Select all elements belonging to a particular class by prefixing the string with '#'.
 
+## DOM Manipulation
+
+There are numerous methods available to interact with DOM elements once they have been selected:
+
+``html(str)``
+``empty``
+``each(callback)``
+``append(element)``
+``attr(attributeName, value)``
+``addClass(newClass)``
+``removeClass(className)``
+``parent``
+``children``
+``find(arg)``
+``on(action, callback)``
+``off(action, callback)``
+``$g.ready(callback)``
+`$g.keydown(callback)``
+`$g.extend``
+
+
 ## AJAX
 
-This function sends an AJAX request, and returns a `Promise`.
-The code for this AJAX function is as follows:
+jerry is able to send AJAX requests, and return a promise upon success/failure.
 
 ```javascript
 $j.ajax = options => {
