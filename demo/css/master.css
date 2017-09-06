@@ -11,6 +11,9 @@ body {
   display: flex;
   align-items: center;
   box-sizing: border-box;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
 }
 
 form {
@@ -41,9 +44,25 @@ input[type='text']:focus {
   opacity: 1;
 }
 
+.search {
+  display: block;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
 .submit-button {
   position: absolute;
   top: calc(100% - 65px);
   right: 0;
   cursor: pointer;
+}
+
+i:before {
+  display: block;
+}
+
+i {
+  text-align: center;
+  font-family: inherit;
+  margin: 0 10px; 
 }
