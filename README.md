@@ -73,9 +73,9 @@ There are numerous methods available to interact with DOM elements once they hav
 ``find(arg)``
 ``on(action, callback)``
 ``off(action, callback)``
-``$g.ready(callback)``
-`$g.keydown(callback)``
-`$g.extend``
+``$j.ready(callback)``
+``$j.keydown(callback)``
+``$j.extend``
 
 
 ## AJAX
